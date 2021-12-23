@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   scope module: :user do
     get 'users/ranking' => 'users#ranking', as: 'ranking'
     resources :users, only: [:show, :edit, :update]
+    get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+    patch 'users/out' => 'users#out', as: 'out'
   end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

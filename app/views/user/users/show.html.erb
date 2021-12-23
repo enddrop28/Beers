@@ -1,0 +1,47 @@
+<main>
+  <div class="container">
+    <div class="mx-auto">
+      <div class="row">
+        <div class="col-md-6 offset-md-1">
+          <h2 class="my-5">マイページ</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 offset-md-1">
+          <table class="table table-borderless mb-1">
+            <tr>
+              <th>登録情報</th>
+              <td><%= link_to "編集する", edit_user_path(@user), class: "btn btn-sm btn-success" %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <table class="table table-bordered mb-1">
+            <tbody>
+              <tr>
+                <th class="table-warning">氏名</th>
+                <td>
+                  <%= @user.first_name %>
+                  <%= @user.last_name %>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-warning">フリガナ</th>
+                <td>
+                  <%= @user.first_name_kana %>
+                  <%= @user.last_name_kana %>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-warning">メールアドレス</th>
+                <td><%= @user.email %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

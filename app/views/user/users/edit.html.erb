@@ -1,0 +1,66 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-1">
+        <h2 class="my-5">会員情報編集</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-auto">
+        <%= form_with model:@user, local:true do |f| %>
+          <table class="table table-borderless mb-5">
+            <tbody>
+             <tr>
+                <th><%= f.label :名前 %></th>
+                <td>
+                  <div class="input-group">
+                    <div class="d-flex input-group-prepend">
+                      <span class="input-group-text">(姓)</span>
+                    </div>
+                    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "鈴木",class: "form-control" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group">
+                    <div class="d-flex input-group-prepend">
+                      <span class="input-group-text">(名)</span>
+                    </div>
+                    <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "一郎",class: "form-control" %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><%= f.label :フリガナ %></th>
+                <td>
+                  <div class="input-group">
+                    <div class="d-flex input-group-prepend">
+                      <span class="input-group-text">(セイ)</span>
+                    </div>
+                    <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "スズキ",class: "form-control" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="input-group">
+                    <div class="d-flex input-group-prepend">
+                      <span class="input-group-text">(メイ)</span>
+                    </div>
+                    <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "イチロウ",class: "form-control" %>
+                  </div>
+                </td>
+              </tr>
+　          　<tr>
+　　            <th><%= f.label :メールアドレス %></th>
+　　            <td><%= f.email_field :email, autocomplete: "email", placeholder: "sample@sample.com",class: "form-control" %></td>
+　          　  <td></td>
+　          　</tr>
+            </tbody>
+　      　</table>
+　　      <div class="col text-center mb-5">
+              <%= f.submit "変更を保存" ,class: "btn btn-success " %>
+              <%= link_to "退会する" , unsubscribe_path(@user), class: "btn btn-danger mt-auto" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
