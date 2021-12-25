@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about', as: 'about'
   
+  resources :posts do
+  resources :post_comments, only: [:create, :destroy]
+  resource :favorites, only: [:create, :destroy]
+  end
+
+  
   # 管理者側のルーティング設定
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]

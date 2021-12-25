@@ -1,7 +1,11 @@
 <main>
   <div class="container">
     <div class="row">
-      <h1>top1</h1>
+      <%= render "homes/category", categories: @categories %>
+      <div class="col-md-9 offset-md-1 my-5">
+        <h2>新着投稿</h2>
+        <%= render 'index', posts: @posts%>
+      </div>
     </div>
   </div>
 </main>

@@ -18,10 +18,11 @@ class User::UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "You have updated user successfully."
+      redirect_to user_path(@user)
     else
-      render "edit"
+      render 'edit'
     end
   end
   
@@ -40,13 +41,13 @@ class User::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:first_name, :last_name, :last_name_kana, :first_name_kana, :email, :profile_image)
   end
 
   def ensure_correct_user
     @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to user_path(current_user)
+    if current_user.id != @user.id
+      redirect_to root_path
     end
   end
   
