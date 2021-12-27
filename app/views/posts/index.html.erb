@@ -6,7 +6,7 @@
         
         <div class="card-list-container py-5">
           <% @posts.each do |post| %>
-          <div class="card w-50 mx-auto mt-4 shadow-lg">
+          <div class="card w-100 mx-auto mt-4 shadow-lg">
             <%= link_to post_path(post.id) do %>
               <%= attachment_image_tag post, :post_image, class:"card-img-top"; %>
             <% end %>
@@ -24,7 +24,11 @@
                   <p class="card-text">説明：<%= post.description %></p>
                   <span><i class="fas fa-user"></i> By <%= post.user.first_name %> ｜ </span>
                   <span><%= link_to "#{post.post_comments.count} コメント", post_path(post.id), class:"text-dark" %></span>
-                  <td class="favorite-btn"><%= render "favorites/favorite", book: @book %></td>
+                  <td class="favorite-btn">
+                    <span id="like-<%= post.id %>" class="display: inline-block;">
+                      <%= render "favorites/favorite", post: post %>
+                    </span>
+                  </td>
                 </div>
               </div>
             </div>
