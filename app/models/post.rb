@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   
   attachment :post_image
   belongs_to :user
-  belongs_to :post
+  belongs_to :category
   validates :name, presence: true
   validates :description, presence: true, length: {maximum: 200}
   has_many :favorites, dependent: :destroy

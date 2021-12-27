@@ -11,48 +11,45 @@
   </head>
 
   <body>
-    <div class="mv">
-      <nav class="navbar-expand-lg">
-        <div class="container">
-          <div class="col-4">
-            <%= link_to root_path class:"navbar_brand" do %>
-            
-            <% end %>
-          </div>
-          <div class="navbar_nav ml-auto">
-            <ul class="nav pull-right nav-pills">
-              <% if admin_signed_in? %>
-                <li><%= link_to "会員一覧", admin_user_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "ジャンル一覧", admin_category_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "投稿一覧", admin_post_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"nav-link btn btn-outline-dark  mx-2" %></li>
-              <% elsif user_signed_in?%>
-                <li><%= link_to "Home", root_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "About", about_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "マイページ", user_path(current_user.id), class:"nav-link btn btn-outline-dark  mx-2" %></li>
-                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link btn btn-outline-dark  mx-2" %></li>
-                <div class="col text-right">
-                  <p class="font-small">ようこそ、<%= current_user.first_name %>さん！</p>
-                </div>
-              <% else %>
-                <li><%= link_to "Home", root_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "About", about_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
-                <li><%= link_to "新規登録", new_user_registration_path, class:"nav-link btn btn-outline-dark  mx-2" %></li>
-                <li><%= link_to "ログイン", user_session_path, class:"nav-link btn btn-outline-dark  mx-2" %></li>
-              <% end %>
-            </ul>
-          </div>
+    <nav class="navbar-expand-lg">
+      <div class="container">
+        <div class="col-4">
+          <%= link_to root_path class:"navbar_brand" do %>
+          <%= image_tag 'log.png' %>
+          <% end %>
         </div>
-      </nav>
-    </div>
-    <%= yield %>
-    <footer>
-      <div class="p-3 text-white">
-        <div class="container">
-          <div class="row">
-            <div class="mx-auto">
-              <p>© 2021 Beers</p>
-            </div>
+        <div class="navbar_nav ml-auto">
+          <ul class="nav pull-right nav-pills">
+            <% if admin_signed_in? %>
+              <li><%= link_to "会員一覧", admin_user_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "ジャンル一覧", admin_category_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "投稿一覧", admin_post_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"nav-link btn btn-outline-dark  mx-2" %></li>
+            <% elsif user_signed_in?%>
+              <li><%= link_to "Home", root_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "About", about_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "投稿する", new_post_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "マイページ", user_path(current_user.id), class:"nav-link btn btn-outline-dark  mx-2" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link btn btn-outline-dark  mx-2" %></li>
+                
+            <% else %>
+              <li><%= link_to "Home", root_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "About", about_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
+              <li><%= link_to "新規登録", new_user_registration_path, class:"nav-link btn btn-outline-dark  mx-2" %></li>
+              <li><%= link_to "ログイン", user_session_path, class:"nav-link btn btn-outline-dark  mx-2" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <%= yield %>
+  <footer>
+    <div class="p-3 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto">
+            <p>© 2021 Beers</p>
           </div>
         </div>
       </div>

@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
  before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
-
+  
+  def new
+    @post = Post.new
+  end
+  
   def show
     @post = Post.find(params[:id])
     @post_new = Post.new
@@ -48,7 +52,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :description)
+    params.require(:post).permit(:name, :description, :post_image, :category_id)
   end
 
   def ensure_correct_user
