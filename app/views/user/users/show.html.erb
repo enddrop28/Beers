@@ -21,6 +21,11 @@
           <table class="table table-bordered mb-1">
             <tbody>
               <tr>
+                <td>
+                  <%= attachment_image_tag(@user, :user_image, :fill, 100, 100, fallback: "no_image.jpg") %>
+                </td>
+              </tr>
+              <tr>
                 <th class="table-warning">氏名</th>
                 <td>
                   <%= @user.first_name %>

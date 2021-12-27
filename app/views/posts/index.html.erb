@@ -21,9 +21,10 @@
                       <strong><i class="far fa-flag"></i><span> <%= post.name %></span></strong>
                     <% end %>
                   </p>
-                  <p class="card-text">説明：<%= post.caption %></p>
-                  <span><i class="fas fa-user"></i> By <%= post.user.name %> ｜ </span>
+                  <p class="card-text">説明：<%= post.description %></p>
+                  <span><i class="fas fa-user"></i> By <%= post.user.first_name %> ｜ </span>
                   <span><%= link_to "#{post.post_comments.count} コメント", post_path(post.id), class:"text-dark" %></span>
+                  <td class="favorite-btn"><%= render "favorites/favorite", book: @book %></td>
                 </div>
               </div>
             </div>

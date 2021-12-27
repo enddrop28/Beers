@@ -10,7 +10,17 @@
         <%= form_with model:@user, local:true do |f| %>
           <table class="table table-borderless mb-5">
             <tbody>
-             <tr>
+              <tr>
+                <th>
+                  <td>
+                    <div class="input-group">
+                      <%= f.label :image %>
+                      <%= f.attachment_field :user_image, class: "form-control-file user_image" %>
+                    </div>
+                  </td>
+                </th>
+              </tr>
+              <tr>
                 <th><%= f.label :名前 %></th>
                 <td>
                   <div class="input-group">
