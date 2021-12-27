@@ -34,8 +34,15 @@
  }
  
  .mv-top {
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-  background-image: url(mv-top.jpg);
-}
+   width: 100%;
+   height: 300px;
+   background-size: cover;
+   background-image: image-url("mv-top.jpg");
+ }
+ 
+ .side-bar {
+   width: 100%;
+   height: 300px;
+   background-color: green;
+   
+ }

@@ -11,13 +11,12 @@
   </head>
 
   <body>
-    <nav class="navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
+      <%= link_to root_path class:"navbar_brand" do %>
+        <%= image_tag 'log.png' %>
+      <% end %>
       <div class="container">
-        <div class="col-4">
-          <%= link_to root_path class:"navbar_brand" do %>
-          <%= image_tag 'log.png' %>
-          <% end %>
-        </div>
+        
         <div class="navbar_nav ml-auto">
           <ul class="nav pull-right nav-pills">
             <% if admin_signed_in? %>
