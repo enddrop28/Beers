@@ -25,7 +25,7 @@
 https://docs.google.com/spreadsheets/d/1Totzi_upbNvzB-Oh8Sbtn-tPG12mL_JCruNvrbAPSZg/edit#gid=0
 
 ## 開発環境
-- OS：Linux
+- OS：Linux2
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
