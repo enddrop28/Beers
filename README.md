@@ -18,7 +18,7 @@
 ## 設計書
 - ER図:https://app.diagrams.net/#G1bqhqRWzloi_0XrqTUUHpluJQBky19H2h
 - テーブル定義書:https://docs.google.com/spreadsheets/d/1kY5HWn3bpWifMxfNOyUNTCBHnb-fHtLMBBQPiM7VyxA/edit#gid=1787959380
-- 画面設計(未完成):https://xd.adobe.com/view/f48678a8-6a3f-42d7-a171-1c6291506bc9-a1d5/
+- 画面設計:https://xd.adobe.com/view/f48678a8-6a3f-42d7-a171-1c6291506bc9-a1d5/
 - アプリケーション詳細設定:https://docs.google.com/spreadsheets/d/1QCKNGfqP-RY37P9fJYFv1foEQaVZn5JIjaIk2zNeaMI/edit#gid=0
 
 ## チャレンジ要素一覧
