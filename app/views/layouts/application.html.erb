@@ -5,18 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg">
       <%= link_to root_path class:"navbar_brand" do %>
         <%= image_tag 'log.png' %>
       <% end %>
       <div class="container">
-        
         <div class="navbar_nav ml-auto">
           <ul class="nav pull-right nav-pills">
             <% if admin_signed_in? %>
@@ -31,7 +28,6 @@
               <li><%= link_to "投稿する", new_post_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
               <li><%= link_to "マイページ", user_path(current_user.id), class:"nav-link btn btn-outline-dark  mx-2" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link btn btn-outline-dark  mx-2" %></li>
-                
             <% else %>
               <li><%= link_to "Home", root_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
               <li><%= link_to "About", about_path, class:"nav-link btn btn-outline-dark mx-2" %></li>
